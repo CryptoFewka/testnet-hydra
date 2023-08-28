@@ -1,14 +1,16 @@
 My Package
 ============
-This is a [Kurtosis package](https://docs.kurtosis.com/concepts-reference/packages). It doesn't do much now, but it will soon!
+This is a [Kurtosis package](https://docs.kurtosis.com/concepts-reference/packages) that will:
+- Leverage [eth2-packakge](https://github.com/kurtosis-tech/eth2-package) to spin up a private Ethereum testnet over Docker or Kubernetes with multi-client support, Flashbot's mev-boost infrastructure for PBS-related testing/validation, and other useful network tools (transaction spammer, monitoring tools, etc). Kurtosis packages are entirely reproducible and composable.
+- Spin up a Bitcoin dev node.
+- Spin up a ZetaChain testnet and launch smoketests.
 
 Run this package
 ----------------
 If you have [Kurtosis installed][install-kurtosis], run:
 
-<!-- TODO replace YOURUSER and THISREPO with the correct values -->
 ```bash
-kurtosis run github.com/YOURUSER/THISREPO
+kurtosis run github.com/CryptoFewka/testnet-hydra
 ```
 
 If you don't have Kurtosis installed, [click here to run this package on the Kurtosis playground](https://gitpod.io/?autoStart=true&editor=code#https://github.com/kurtosis-tech/playground-gitpod).
@@ -36,16 +38,14 @@ The arguments can then be passed in to `kurtosis run`.
 
 For example:
 
-<!-- TODO replace YOURUSER and THISREPO with the correct values -->
 ```bash
-kurtosis run github.com/YOURUSER/THISREPO '{"name":"Maynard James Keenan"}'
+kurtosis run github.com/CryptoFewka/testnet-hydra '{"name":"Maynard James Keenan"}'
 ```
 
 You can also store the JSON args in a file, and use command expansion to slot them in:
 
-<!-- TODO replace YOURUSER and THISREPO with the correct values -->
 ```bash
-kurtosis run github.com/YOURUSER/THISREPO "$(cat args.json)"
+kurtosis run github.com/CryptoFewka/testnet-hyrda "$(cat args.json)"
 ```
 
 </details>
@@ -54,11 +54,10 @@ Use this package in your package
 --------------------------------
 Kurtosis packages can be composed inside other Kurtosis packages. To use this package in your package:
 
-<!-- TODO Replace YOURUSER and THISREPO with the correct values! -->
 First, import this package by adding the following to the top of your Starlark file:
 
 ```python
-this_package = import_module("github.com/YOURUSER/THISREPO/main.star")
+this_package = import_module("github.com/CryptoFewka/testnet-hyrda/main.star")
 ```
 
 Then, call the this package's `run` function somewhere in your Starlark script:
