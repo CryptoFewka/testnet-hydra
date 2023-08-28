@@ -1,4 +1,4 @@
-My Package
+Testnet-Hydra
 ============
 This is a [Kurtosis package](https://docs.kurtosis.com/concepts-reference/packages) that will:
 - Leverage [eth2-packakge](https://github.com/kurtosis-tech/eth2-package) to spin up a private Ethereum testnet over Docker or Kubernetes with multi-client support, Flashbot's mev-boost infrastructure for PBS-related testing/validation, and other useful network tools (transaction spammer, monitoring tools, etc). Kurtosis packages are entirely reproducible and composable.
